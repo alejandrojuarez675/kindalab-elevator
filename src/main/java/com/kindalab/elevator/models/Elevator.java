@@ -119,4 +119,16 @@ public class Elevator {
         this.state.goToFloor(floor);
     }
 
+    @Override
+    public String toString() {
+        return "Elevator{" +
+                "currentFloor=" + currentFloor +
+                ", minStory=" + minStory +
+                ", maxStory=" + maxStory +
+                ", weight=" + weight +
+                ", maxWeight=" + maxWeight +
+                ", requiredList=" + requiredList +
+                ", state=" + (state != null ? state.getClass() : "null") +
+                '}';
+    }
 }

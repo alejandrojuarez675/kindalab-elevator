@@ -46,6 +46,7 @@ public class StoppedState extends ElevatorState {
 
     private void moveToFloor(Long floor) {
         System.out.println("[Stopped] Move to floor: " + floor);
+
         if (this.elevator.getWeight() > this.elevator.getMaxWeight()) {
             System.out.println("Overweight, the elevator turn off");
             // delay to change overweight
@@ -54,16 +55,17 @@ public class StoppedState extends ElevatorState {
 
         if (floor.equals(this.elevator.getCurrentFloor())) {
             this.elevator.setState(new StoppedState(this.elevator));
-            return;
+
+        } else {
+            this.elevator.addRequiredFloor(floor);
+
+            if (this.elevator.getCurrentFloor() > floor) {
+                this.elevator.setState(new GoDownState(this.elevator));
+            } else if (this.elevator.getCurrentFloor() < floor) {
+                this.elevator.setState(new GoUpState(this.elevator));
+            }
         }
 
-        this.elevator.addRequiredFloor(floor);
-
-        if (this.elevator.getCurrentFloor() > floor) {
-            this.elevator.setState(new GoDownState(this.elevator));
-        } else if (this.elevator.getCurrentFloor() < floor) {
-            this.elevator.setState(new GoUpState(this.elevator));
-        }
     }
 
 }
