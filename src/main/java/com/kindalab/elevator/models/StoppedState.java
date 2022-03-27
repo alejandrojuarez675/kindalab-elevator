@@ -2,17 +2,12 @@ package com.kindalab.elevator.models;
 
 import java.util.Optional;
 
-public class StoppedState extends ElevatorState {
+public class StoppedState implements ElevatorState {
+
+    private final Elevator elevator;
 
     public StoppedState(Elevator elevator) {
-        super(elevator);
-        System.out.println("Stop " + this.elevator.getCurrentFloor());
-
-        this.elevator.removeRequiredFloor(this.elevator.getCurrentFloor());
-
-        if (!this.elevator.getRequiredList().isEmpty()) {
-            moveToNearFloor();
-        }
+        this.elevator = elevator;
     }
 
     @Override
@@ -45,25 +40,44 @@ public class StoppedState extends ElevatorState {
     }
 
     private void moveToFloor(Long floor) {
-        System.out.println("[Stopped] Move to floor: " + floor);
+        System.out.println("[StoppedState] Move to floor: " + floor);
 
         if (this.elevator.getWeight() > this.elevator.getMaxWeight()) {
-            System.out.println("Overweight, the elevator turn off");
+            System.out.println("[StoppedState] Overweight, the elevator turn off");
             // delay to change overweight
             return;
         }
 
         if (floor.equals(this.elevator.getCurrentFloor())) {
-            this.elevator.setState(new StoppedState(this.elevator));
+            System.out.println("Stop on " + this.elevator.getCurrentFloor());
+            this.elevator.setState(this.elevator.getStoppedState());
 
         } else {
-            this.elevator.addRequiredFloor(floor);
 
             if (this.elevator.getCurrentFloor() > floor) {
-                this.elevator.setState(new GoDownState(this.elevator));
+                System.out.println("[StoppedState] define go to down until floor " + floor);
+                this.elevator.setState(this.elevator.getGoDownState());
+                while (this.elevator.getCurrentFloor() > floor) {
+                    System.out.println("Down " + this.elevator.getCurrentFloor());
+                    this.elevator.setCurrentFloor(this.elevator.getCurrentFloor() - 1);
+                }
+                this.elevator.setState(this.elevator.getStoppedState());
+
             } else if (this.elevator.getCurrentFloor() < floor) {
-                this.elevator.setState(new GoUpState(this.elevator));
+                System.out.println("[StoppedState] define go to up until floor " + floor);
+                this.elevator.setState(this.elevator.getGoUpState());
+                while (this.elevator.getCurrentFloor() < floor) {
+                    System.out.println("Up " + this.elevator.getCurrentFloor());
+                    this.elevator.setCurrentFloor(this.elevator.getCurrentFloor() + 1);
+                }
+                this.elevator.setState(this.elevator.getStoppedState());
             }
+        }
+
+        this.elevator.removeRequiredFloor(this.elevator.getCurrentFloor());
+
+        if (!this.elevator.getRequiredList().isEmpty()) {
+            moveToNearFloor();
         }
 
     }

@@ -3,7 +3,7 @@ package com.kindalab.elevator.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Elevator {
+public class Elevator implements ElevatorState {
 
     private Long currentFloor;
     private Long minStory;
@@ -13,6 +13,10 @@ public class Elevator {
     private List<Long> requiredList;
     private ElevatorState state;
 
+    private final ElevatorState stoppedState;
+    private final ElevatorState goUpState;
+    private final ElevatorState goDownState;
+
     public Elevator(Long minStory, Long maxStory, Double maxWeight) {
         this.minStory = minStory;
         this.maxStory = maxStory;
@@ -20,7 +24,12 @@ public class Elevator {
         this.currentFloor = 0L;
         this.weight = 0D;
         this.requiredList = new ArrayList<>();
-        this.state = new StoppedState(this);
+
+        this.stoppedState = new StoppedState(this);
+        this.goUpState = new GoUpState(this);
+        this.goDownState = new GoDownState(this);
+
+        this.state = this.stoppedState;
     }
 
     public Long getCurrentFloor() {
@@ -77,6 +86,18 @@ public class Elevator {
 
     public void setMaxWeight(Double maxWeight) {
         this.maxWeight = maxWeight;
+    }
+
+    public ElevatorState getStoppedState() {
+        return stoppedState;
+    }
+
+    public ElevatorState getGoUpState() {
+        return goUpState;
+    }
+
+    public ElevatorState getGoDownState() {
+        return goDownState;
     }
 
     public void addRequiredFloor(Long floor) {

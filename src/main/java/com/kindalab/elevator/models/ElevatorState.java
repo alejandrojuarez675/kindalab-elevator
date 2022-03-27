@@ -1,14 +1,8 @@
 package com.kindalab.elevator.models;
 
-public abstract class ElevatorState {
+public interface ElevatorState {
 
-    Elevator elevator;
-
-    public ElevatorState(Elevator elevator) {
-        this.elevator = elevator;
-    }
-
-    public abstract void callToGoUpFromFloor(Long floor);
-    public abstract void callToGoDownFromFloor(Long floor);
-    public abstract void goToFloor(Long floor);
+    void callToGoUpFromFloor(Long floor);
+    void callToGoDownFromFloor(Long floor);
+    void goToFloor(Long floor);
 }
