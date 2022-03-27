@@ -7,8 +7,8 @@ public class GoDownState extends ElevatorState {
 
     public GoDownState(Elevator elevator) {
         super(elevator);
+        System.out.println("Down " + this.elevator.getCurrentFloor());
 
-        System.out.println("Elevator is going to down");
         this.elevator.setCurrentFloor(this.elevator.getCurrentFloor() - 1);
 
         if (!this.elevator.getRequiredList().isEmpty()) {
@@ -18,9 +18,9 @@ public class GoDownState extends ElevatorState {
                     .max(Comparator.naturalOrder());
 
             if (maxRequiredFloorOpt.isPresent()) {
-                Long minRequiredFloor = maxRequiredFloorOpt.get();
+                Long maxRequiredFloor = maxRequiredFloorOpt.get();
 
-                if (minRequiredFloor.equals(this.elevator.getCurrentFloor())) {
+                if (maxRequiredFloor.equals(this.elevator.getCurrentFloor())) {
                     this.elevator.setState(new StoppedState(this.elevator));
                 } else {
                     this.elevator.setState(new GoDownState(this.elevator));

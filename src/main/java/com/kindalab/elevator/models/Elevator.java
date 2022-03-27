@@ -80,6 +80,11 @@ public class Elevator {
     }
 
     public void addRequiredFloor(Long floor) {
+        if (floor > maxStory || floor < minStory) {
+            System.out.println("Out of range story");
+            return;
+        }
+
         if (this.requiredList == null) {
             this.requiredList = new ArrayList<>();
         }
@@ -87,6 +92,7 @@ public class Elevator {
         if (!this.requiredList.contains(floor)) {
             this.requiredList.add(floor);
         }
+        System.out.println("Add floor: Updating required list: " + this.requiredList.toString());
     }
 
     public void removeRequiredFloor(Long floor) {
@@ -95,6 +101,22 @@ public class Elevator {
         }
 
         this.requiredList.remove(floor);
+        System.out.println("Remove floor: Updating required list: " + this.requiredList.toString());
+    }
+
+    public void callToGoUpFromFloor(Long floor) {
+        System.out.println("Somebody call elevator from " + floor);
+        this.state.callToGoUpFromFloor(floor);
+    }
+
+    public void callToGoDownFromFloor(Long floor) {
+        System.out.println("Somebody call elevator from " + floor);
+        this.state.callToGoDownFromFloor(floor);
+    }
+
+    public void goToFloor(Long floor) {
+        System.out.println("Somebody order elevator got to " + floor);
+        this.state.goToFloor(floor);
     }
 
 }

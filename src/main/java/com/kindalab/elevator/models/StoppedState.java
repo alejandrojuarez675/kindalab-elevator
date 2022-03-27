@@ -6,8 +6,8 @@ public class StoppedState extends ElevatorState {
 
     public StoppedState(Elevator elevator) {
         super(elevator);
+        System.out.println("Stop " + this.elevator.getCurrentFloor());
 
-        System.out.println("Elevator is stopped");
         this.elevator.removeRequiredFloor(this.elevator.getCurrentFloor());
 
         if (!this.elevator.getRequiredList().isEmpty()) {
@@ -45,14 +45,16 @@ public class StoppedState extends ElevatorState {
     }
 
     private void moveToFloor(Long floor) {
+        System.out.println("[Stopped] Move to floor: " + floor);
         if (this.elevator.getWeight() > this.elevator.getMaxWeight()) {
             System.out.println("Overweight, the elevator turn off");
             // delay to change overweight
-            this.elevator.setState(new StoppedState(this.elevator));
+            return;
         }
 
         if (floor.equals(this.elevator.getCurrentFloor())) {
             this.elevator.setState(new StoppedState(this.elevator));
+            return;
         }
 
         this.elevator.addRequiredFloor(floor);

@@ -7,8 +7,8 @@ public class GoUpState extends ElevatorState {
 
     public GoUpState(Elevator elevator) {
         super(elevator);
+        System.out.println("Up " + this.elevator.getCurrentFloor());
 
-        System.out.println("Elevator is going to up");
         this.elevator.setCurrentFloor(this.elevator.getCurrentFloor() + 1);
 
         if (!this.elevator.getRequiredList().isEmpty()) {
