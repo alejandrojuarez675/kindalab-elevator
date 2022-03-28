@@ -1,12 +1,12 @@
 package com.kindalab.elevator.models;
 
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
-class ElevatorTest {
+public class ElevatorTest {
 
     @Test
-    void callToGoUpFromFloorZeroFirstTime() {
+    public void callToGoUpFromFloorZeroFirstTime() {
         Elevator elevator = new Elevator(-1L, 50L, 1000D);
 
         elevator.call(0L);
@@ -15,7 +15,7 @@ class ElevatorTest {
     }
 
     @Test
-    void callFromZeroAndGoToUpperStory() {
+    public void callFromZeroAndGoToUpperStory() {
         Elevator elevator = new Elevator(-1L, 50L, 1000D);
 
         elevator.call(0L);
@@ -29,7 +29,7 @@ class ElevatorTest {
     }
 
     @Test
-    void callFromZeroAndGoToALowerStory() {
+    public void callFromZeroAndGoToALowerStory() {
         Elevator elevator = new Elevator(-1L, 50L, 1000D);
 
         elevator.call(10L);
@@ -43,7 +43,7 @@ class ElevatorTest {
     }
 
     @Test
-    void callFromZeroAndGoToOutsideRangeStory() {
+    public void callFromZeroAndGoToOutsideRangeStory() {
         Elevator elevator = new Elevator(-1L, 50L, 1000D);
 
         elevator.call(0L);
@@ -57,7 +57,7 @@ class ElevatorTest {
     }
 
     @Test
-    void callFromZeroAndGoToOverweight() {
+    public void callFromZeroAndGoToOverweight() {
         Elevator elevator = new Elevator(-1L, 50L, 1000D);
 
         elevator.call(0L);

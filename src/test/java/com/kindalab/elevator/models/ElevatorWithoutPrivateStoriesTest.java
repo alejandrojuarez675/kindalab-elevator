@@ -1,14 +1,14 @@
 package com.kindalab.elevator.models;
 
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-class ElevatorWithoutPrivateStoriesTest {
+public class ElevatorWithoutPrivateStoriesTest {
 
     @Test
-    void callToGoUpFromFloorZeroFirstTime() {
+    public void callToGoUpFromFloorZeroFirstTime() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of());
 
@@ -18,7 +18,7 @@ class ElevatorWithoutPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToUpperStory() {
+    public void callFromZeroAndGoToUpperStory() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of());
 
@@ -33,7 +33,7 @@ class ElevatorWithoutPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToALowerStory() {
+    public void callFromZeroAndGoToALowerStory() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of());
 
@@ -48,7 +48,7 @@ class ElevatorWithoutPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToOutsideRangeStory() {
+    public void callFromZeroAndGoToOutsideRangeStory() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of());
 
@@ -63,7 +63,7 @@ class ElevatorWithoutPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToOverweight() {
+    public void callFromZeroAndGoToOverweight() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of());
 

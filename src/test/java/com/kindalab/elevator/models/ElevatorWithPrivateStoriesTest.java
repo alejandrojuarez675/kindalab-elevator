@@ -1,14 +1,14 @@
 package com.kindalab.elevator.models;
 
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 public class ElevatorWithPrivateStoriesTest {
 
     @Test
-    void callToGoUpFromFloorZeroFirstTime() {
+    public void callToGoUpFromFloorZeroFirstTime() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
@@ -18,7 +18,7 @@ public class ElevatorWithPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToUpperAllowedStory_withCard() {
+    public void callFromZeroAndGoToUpperAllowedStory_withCard() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
@@ -33,7 +33,7 @@ public class ElevatorWithPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToALowerAllowedStory_withCard() {
+    public void callFromZeroAndGoToALowerAllowedStory_withCard() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
@@ -48,7 +48,7 @@ public class ElevatorWithPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToUpperPrivateStory_withCard() {
+    public void callFromZeroAndGoToUpperPrivateStory_withCard() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
@@ -63,7 +63,7 @@ public class ElevatorWithPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToALowerPrivateStory_withCard() {
+    public void callFromZeroAndGoToALowerPrivateStory_withCard() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
@@ -78,7 +78,7 @@ public class ElevatorWithPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToUpperAllowedStory_withoutCard() {
+    public void callFromZeroAndGoToUpperAllowedStory_withoutCard() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
@@ -93,7 +93,7 @@ public class ElevatorWithPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToALowerAllowedStory_withoutCard() {
+    public void callFromZeroAndGoToALowerAllowedStory_withoutCard() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
@@ -108,7 +108,7 @@ public class ElevatorWithPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToUpperPrivateStory_withoutCard() {
+    public void callFromZeroAndGoToUpperPrivateStory_withoutCard() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
@@ -123,7 +123,7 @@ public class ElevatorWithPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToALowerPrivateStory_withoutCard() {
+    public void callFromZeroAndGoToALowerPrivateStory_withoutCard() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
@@ -138,7 +138,7 @@ public class ElevatorWithPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToUpperAllowedStory_insecureMethod() {
+    public void callFromZeroAndGoToUpperAllowedStory_insecureMethod() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
@@ -153,7 +153,7 @@ public class ElevatorWithPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToALowerAllowedStory_insecureMethod() {
+    public void callFromZeroAndGoToALowerAllowedStory_insecureMethod() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
@@ -168,7 +168,7 @@ public class ElevatorWithPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToUpperPrivateStory_insecureMethod() {
+    public void callFromZeroAndGoToUpperPrivateStory_insecureMethod() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
@@ -183,7 +183,7 @@ public class ElevatorWithPrivateStoriesTest {
     }
 
     @Test
-    void callFromZeroAndGoToALowerPrivateStory_insecureMethod() {
+    public void callFromZeroAndGoToALowerPrivateStory_insecureMethod() {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 

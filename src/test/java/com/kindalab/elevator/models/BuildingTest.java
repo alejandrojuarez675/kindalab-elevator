@@ -1,14 +1,14 @@
 package com.kindalab.elevator.models;
 
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-class BuildingTest {
+public class BuildingTest {
 
     @Test
-    void publicElevator_roundTest() {
+    public void publicElevator_roundTest() {
         Building building = new Building(
                 new Elevator(-1L, 50L, 4000D),
                 new ElevatorWithPrivateStories(-1L, 50L, 1000D, List.of(-1L, 50L))
@@ -42,7 +42,7 @@ class BuildingTest {
     }
 
     @Test
-    void freightElevator_roundTest() {
+    public void freightElevator_roundTest() {
         Building building = new Building(
                 new Elevator(-1L, 50L, 4000D),
                 new ElevatorWithPrivateStories(-1L, 50L, 1000D, List.of(-1L, 50L))
