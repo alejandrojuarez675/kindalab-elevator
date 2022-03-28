@@ -9,17 +9,8 @@ public class GoDownState implements ElevatorState {
     }
 
     @Override
-    public void callToGoUpFromFloor(Long floor) {
+    public void call(Long floor) {
         this.elevator.addRequiredFloor(floor);
-    }
-
-    @Override
-    public void callToGoDownFromFloor(Long floor) {
-        if (floor.equals(this.elevator.getCurrentFloor())) {
-            this.elevator.setState(this.elevator.getStoppedState());
-        } else {
-            this.elevator.addRequiredFloor(floor);
-        }
     }
 
     @Override

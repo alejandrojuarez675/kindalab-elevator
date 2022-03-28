@@ -125,16 +125,13 @@ public class Elevator implements ElevatorState {
         System.out.println("Remove floor: Updating required list: " + this.requiredList.toString());
     }
 
-    public void callToGoUpFromFloor(Long floor) {
+    @Override
+    public void call(Long floor) {
         System.out.println("Somebody call elevator from " + floor);
-        this.state.callToGoUpFromFloor(floor);
+        this.state.call(floor);
     }
 
-    public void callToGoDownFromFloor(Long floor) {
-        System.out.println("Somebody call elevator from " + floor);
-        this.state.callToGoDownFromFloor(floor);
-    }
-
+    @Override
     public void goToFloor(Long floor) {
         System.out.println("Somebody order elevator got to " + floor);
         this.state.goToFloor(floor);

@@ -12,7 +12,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(0L);
+        elevator.call(0L);
         Assertions.assertEquals(0L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
     }
@@ -22,7 +22,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(0L);
+        elevator.call(0L);
         Assertions.assertEquals(0L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -37,7 +37,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(10L);
+        elevator.call(10L);
         Assertions.assertEquals(10L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -52,7 +52,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(0L);
+        elevator.call(0L);
         Assertions.assertEquals(0L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -67,7 +67,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(10L);
+        elevator.call(10L);
         Assertions.assertEquals(10L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -82,7 +82,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(0L);
+        elevator.call(0L);
         Assertions.assertEquals(0L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -97,7 +97,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(10L);
+        elevator.call(10L);
         Assertions.assertEquals(10L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -112,7 +112,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(0L);
+        elevator.call(0L);
         Assertions.assertEquals(0L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -127,7 +127,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(10L);
+        elevator.call(10L);
         Assertions.assertEquals(10L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -142,7 +142,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(0L);
+        elevator.call(0L);
         Assertions.assertEquals(0L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -157,7 +157,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(10L);
+        elevator.call(10L);
         Assertions.assertEquals(10L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -172,7 +172,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(0L);
+        elevator.call(0L);
         Assertions.assertEquals(0L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -187,7 +187,7 @@ public class ElevatorWithPrivateStoriesTest {
         ElevatorWithPrivateStories elevator = new ElevatorWithPrivateStories(
                 -1L, 50L, 1000D, List.of(-1L, 50L));
 
-        elevator.callToGoUpFromFloor(10L);
+        elevator.call(10L);
         Assertions.assertEquals(10L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 

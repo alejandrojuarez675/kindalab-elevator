@@ -11,13 +11,7 @@ public class StoppedState implements ElevatorState {
     }
 
     @Override
-    public void callToGoUpFromFloor(Long floor) {
-        this.elevator.addRequiredFloor(floor);
-        moveToNearFloor();
-    }
-
-    @Override
-    public void callToGoDownFromFloor(Long floor) {
+    public void call(Long floor) {
         this.elevator.addRequiredFloor(floor);
         moveToNearFloor();
     }
@@ -55,22 +49,10 @@ public class StoppedState implements ElevatorState {
         } else {
 
             if (this.elevator.getCurrentFloor() > floor) {
-                System.out.println("[StoppedState] define go to down until floor " + floor);
-                this.elevator.setState(this.elevator.getGoDownState());
-                while (this.elevator.getCurrentFloor() > floor) {
-                    System.out.println("Down " + this.elevator.getCurrentFloor());
-                    this.elevator.setCurrentFloor(this.elevator.getCurrentFloor() - 1);
-                }
-                this.elevator.setState(this.elevator.getStoppedState());
+                goToDown(floor);
 
             } else if (this.elevator.getCurrentFloor() < floor) {
-                System.out.println("[StoppedState] define go to up until floor " + floor);
-                this.elevator.setState(this.elevator.getGoUpState());
-                while (this.elevator.getCurrentFloor() < floor) {
-                    System.out.println("Up " + this.elevator.getCurrentFloor());
-                    this.elevator.setCurrentFloor(this.elevator.getCurrentFloor() + 1);
-                }
-                this.elevator.setState(this.elevator.getStoppedState());
+                goToUp(floor);
             }
         }
 
@@ -80,6 +62,26 @@ public class StoppedState implements ElevatorState {
             moveToNearFloor();
         }
 
+    }
+
+    private void goToUp(Long floor) {
+        System.out.println("[StoppedState] define go to up until floor " + floor);
+        this.elevator.setState(this.elevator.getGoUpState());
+        while (this.elevator.getCurrentFloor() < floor) {
+            System.out.println("Up " + this.elevator.getCurrentFloor());
+            this.elevator.setCurrentFloor(this.elevator.getCurrentFloor() + 1);
+        }
+        this.elevator.setState(this.elevator.getStoppedState());
+    }
+
+    private void goToDown(Long floor) {
+        System.out.println("[StoppedState] define go to down until floor " + floor);
+        this.elevator.setState(this.elevator.getGoDownState());
+        while (this.elevator.getCurrentFloor() > floor) {
+            System.out.println("Down " + this.elevator.getCurrentFloor());
+            this.elevator.setCurrentFloor(this.elevator.getCurrentFloor() - 1);
+        }
+        this.elevator.setState(this.elevator.getStoppedState());
     }
 
 }

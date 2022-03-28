@@ -9,7 +9,7 @@ class ElevatorTest {
     void callToGoUpFromFloorZeroFirstTime() {
         Elevator elevator = new Elevator(-1L, 50L, 1000D);
 
-        elevator.callToGoUpFromFloor(0L);
+        elevator.call(0L);
         Assertions.assertEquals(0L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
     }
@@ -18,7 +18,7 @@ class ElevatorTest {
     void callFromZeroAndGoToUpperStory() {
         Elevator elevator = new Elevator(-1L, 50L, 1000D);
 
-        elevator.callToGoUpFromFloor(0L);
+        elevator.call(0L);
         Assertions.assertEquals(0L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -32,7 +32,7 @@ class ElevatorTest {
     void callFromZeroAndGoToALowerStory() {
         Elevator elevator = new Elevator(-1L, 50L, 1000D);
 
-        elevator.callToGoUpFromFloor(10L);
+        elevator.call(10L);
         Assertions.assertEquals(10L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -46,7 +46,7 @@ class ElevatorTest {
     void callFromZeroAndGoToOutsideRangeStory() {
         Elevator elevator = new Elevator(-1L, 50L, 1000D);
 
-        elevator.callToGoUpFromFloor(0L);
+        elevator.call(0L);
         Assertions.assertEquals(0L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
@@ -60,7 +60,7 @@ class ElevatorTest {
     void callFromZeroAndGoToOverweight() {
         Elevator elevator = new Elevator(-1L, 50L, 1000D);
 
-        elevator.callToGoUpFromFloor(0L);
+        elevator.call(0L);
         Assertions.assertEquals(0L, elevator.getCurrentFloor());
         Assertions.assertEquals(StoppedState.class, elevator.getState().getClass());
 
