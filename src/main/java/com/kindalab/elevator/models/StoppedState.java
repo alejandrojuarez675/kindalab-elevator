@@ -68,8 +68,7 @@ public class StoppedState implements ElevatorState {
         System.out.println("[StoppedState] define go to up until floor " + floor);
         this.elevator.setState(this.elevator.getGoUpState());
         while (this.elevator.getCurrentFloor() < floor) {
-            System.out.println("Up " + this.elevator.getCurrentFloor());
-            this.elevator.setCurrentFloor(this.elevator.getCurrentFloor() + 1);
+            this.elevator.moveUpOne();
         }
         this.elevator.setState(this.elevator.getStoppedState());
     }
@@ -78,8 +77,7 @@ public class StoppedState implements ElevatorState {
         System.out.println("[StoppedState] define go to down until floor " + floor);
         this.elevator.setState(this.elevator.getGoDownState());
         while (this.elevator.getCurrentFloor() > floor) {
-            System.out.println("Down " + this.elevator.getCurrentFloor());
-            this.elevator.setCurrentFloor(this.elevator.getCurrentFloor() - 1);
+            this.elevator.moveDownOne();
         }
         this.elevator.setState(this.elevator.getStoppedState());
     }

@@ -137,6 +137,16 @@ public class Elevator implements ElevatorState {
         this.state.goToFloor(floor);
     }
 
+    void moveDownOne() {
+        System.out.println("Down " + currentFloor);
+        currentFloor = currentFloor - 1;
+    }
+
+    void moveUpOne() {
+        System.out.println("Up " + currentFloor);
+        currentFloor = currentFloor + 1;
+    }
+
     @Override
     public String toString() {
         return "Elevator{" +
